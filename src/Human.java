@@ -1,4 +1,5 @@
 import java.time.Year;
+import java.util.Objects;
 
 public class Human {
     private String name;
@@ -8,10 +9,13 @@ public class Human {
     private String job;
 
     public Human(String name, String town, int age, String job) {
-        this.name = name;
-        this.town = town;
+        this.name = Objects.requireNonNullElse(name, "Информация не указана");
+        this.town = Objects.requireNonNullElse(town, "Информация не указана");
+        this.job = Objects.requireNonNullElse(job, "Информация не указана");
         this.yearOfBirth = Year.now().getValue() - age;
-        this.job = job;
+        if (this.yearOfBirth < 0) {
+            throw new IllegalArgumentException("Год рождения не может быть отрицательным");
+        }
     }
 
     public String getName() {

@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        Human maks = new Human("Максим", "Минск",35, "бренд-менеджер");
-        Human ann = new Human("Аня", "Москва", 29, "методист образовательных программ");
-        Human kate = new Human("Катя", "Калининград", 28, "продакт-менеджер");
+        Human maks = new Human("Максим", "Минск",35 /*6000 */, "бренд-менеджер");
+        Human ann = new Human("Аня", null, 29, "методист образовательных программ");
+        Human kate = new Human(null, "Калининград", 28, null);
         Human artem = new Human("Артём", "Москва", 27, "директор по развитию бизнеса");
         printData(maks);
         printData(ann);
